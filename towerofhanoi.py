@@ -10,13 +10,13 @@ def move(f, t):
 	# time.sleep(0.3)
 
 
-# recursion where n is number of disks in tower, f is starting location, f is helper location, and t is end location
-def hanoi(n, f, v, t):
+# recursion where n is number of disks in tower, f is starting location, v is helper location, and t is end location
+def hanoi_recursion(n, f, v, t):
 	if n == 0:
 		pass
 	else:		
-		hanoi(n-1, f, t, v)
+		hanoi_recursion(n-1, f, t, v)
 		move(f, t)
-		hanoi(n-1, v, f, t) 
+		hanoi_recursion(n-1, v, f, t) 
 
-hanoi(number, start, via, finish)
+hanoi_recursion(number, start, via, finish)
